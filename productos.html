@@ -57,51 +57,119 @@
 
   <!-- Sección de Marcas Asociadas -->
   <main>
-    <section class="brands-section">
-      <h2 class="section-title">NUESTRAS MARCAS ASOCIADAS</h2>
+    <div class="layout-container">
+      <aside class="sidebar-filters">
+        <div class="filter-header">
+          <div class="filter-header-title">
+            <i class="fas fa-sliders-h"></i>
+            <span>Filtros</span>
+          </div>
+          <button class="clear-filters-btn" onclick="limpiarFiltros()">Limpiar filtros</button>
+        </div>
 
-      <div class="brand-grid">
-        <a href="productos.html?marca=asus" class="brand-card card-marca" style="text-decoration: none;">
-          <img src="img/marcas/asus.png" alt="Asus" />
-          <h4>Asus</h4>
-        </a>
+        <div class="filter-group">
+          <h3 class="filter-title">Marca</h3>
+          <div class="filter-options">
+            <label class="filter-label">
+              <input type="checkbox" class="filter-checkbox" value="asus">
+              <span class="filter-text">ASUS</span>
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" class="filter-checkbox" value="lenovo">
+              <span class="filter-text">LENOVO</span>
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" class="filter-checkbox" value="hp">
+              <span class="filter-text">HP</span>
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" class="filter-checkbox" value="acer">
+              <span class="filter-text">ACER</span>
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" class="filter-checkbox" value="msi">
+              <span class="filter-text">MSI</span>
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" class="filter-checkbox" value="gigabyte">
+              <span class="filter-text">GIGABYTE</span>
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" class="filter-checkbox" value="kingston">
+              <span class="filter-text">KINGSTON</span>
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" class="filter-checkbox" value="logitech">
+              <span class="filter-text">LOGITECH</span>
+            </label>
 
-        <a href="productos.html?marca=lenovo" class="brand-card card-marca" style="text-decoration: none;">
-          <img src="img/marcas/lenovo.png" alt="Lenovo" />
-          <h4>Lenovo</h4>
-        </a>
+          </div>
+        </div>
 
-        <a href="productos.html?marca=hp" class="brand-card card-marca" style="text-decoration: none;">
-          <img src="img/marcas/hp.png" alt="HP" />
-          <h4>HP</h4>
-        </a>
+        <div class="filter-group">
+          <h3 class="filter-title">Categoría</h3>
+          <div class="filter-options">
+            <label class="filter-label">
+              <input type="checkbox" class="filter-checkbox" value="laptop">
+              <span class="filter-text">LAPTOPS</span>
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" class="filter-checkbox" value="componente">
+              <span class="filter-text">COMPONENTES</span>
+            </label>
+            <label class="filter-label">
+              <input type="checkbox" class="filter-checkbox" value="periferico">
+              <span class="filter-text">PERIFÉRICOS</span>
+            </label>
+          </div>
+        </div>
+      </aside>
 
-        <a href="productos.html?marca=acer" class="brand-card card-marca" style="text-decoration: none;">
-          <img src="img/marcas/acer.png" alt="Acer" />
-          <h4>Acer</h4>
-        </a>
+      <main class="products-area">
+        <div class="products-header">
+          <h1 class="page-title">CATÁLOGO DE PRODUCTOS</h1>
+          <div class="sort-by">
+            <label for="ordenar">Ordenar:</label>
+            <select id="ordenar" class="sort-select">
+              <option value="relevancia">Relevancia</option>
+              <option value="menor">Precio: Menor a Mayor</option>
+              <option value="mayor">Precio: Mayor a Menor</option>
+            </select>
+          </div>
+        </div>
 
-        <a href="productos.html?marca=msi" class="brand-card card-marca" style="text-decoration: none;">
-          <img src="img/marcas/msi.png" alt="MSI" />
-          <h4>MSI</h4>
-        </a>
+        <div class="catalog-grid" id="contenedor-productos">
+          <div class="product-card" data-marca="asus" data-categoria="laptop">
+            <img src="img/p1.png" alt="ASUS ROG Strix" />
+            <div class="product-info">
+              <span class="brand-tag">ASUS</span>
+              <h4 class="product-name">Laptop Gamer ASUS ROG Strix G15</h4>
+              <div class="price-container">
+                <span class="current-price">S/ 4,500.00</span>
+              </div>
+              <button class="add-to-cart-btn" onclick="addToCart('Laptop ASUS ROG Strix', 4500)">
+                <i class="fas fa-shopping-cart"></i> Agregar
+              </button>
+            </div>
+          </div>
 
-        <a href="productos.html?marca=gigabyte" class="brand-card card-marca" style="text-decoration: none;">
-          <img src="img/marcas/gigabyte.png" alt="Gigabyte" />
-          <h4>Gigabyte</h4>
-        </a>
+          <div class="product-card" data-marca="lenovo" data-categoria="laptop">
+            <img src="img/p8.jpg" alt="Lenovo IdeaPad" />
+            <div class="product-info">
+              <span class="brand-tag">LENOVO</span>
+              <h4 class="product-name">Lenovo IdeaPad 3 15IAH7, Core i5</h4>
+              <div class="price-container">
+                <span class="current-price">S/ 950.00</span>
+              </div>
+              <button class="add-to-cart-btn" onclick="addToCart('Lenovo IdeaPad', 950)">
+                <i class="fas fa-shopping-cart"></i> Agregar
+              </button>
+            </div>
+          </div>
 
-        <a href="productos.html?marca=kingston" class="brand-card card-marca" style="text-decoration: none;">
-          <img src="img/marcas/kingston.png" alt="Kingston" />
-          <h4>Kingston</h4>
-        </a>
-
-        <a href="productos.html?marca=logitech" class="brand-card card-marca" style="text-decoration: none;">
-          <img src="img/marcas/logitech.png" alt="Logitech" />
-          <h4>Logitech</h4>
-        </a>
-      </div>
-    </section>
+        </div>
+      </main>
+    </div>
   </main>
 
   <!-- Pie de pagina -->
