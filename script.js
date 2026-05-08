@@ -118,3 +118,31 @@ function limpiarFiltros() {
 
   aplicarFiltros();
 }
+
+let heroIndex = 0;
+
+function mostrarHero(n) {
+    const slides = document.querySelectorAll('.hero-slide');
+    
+    // Si llegamos al final, vuelve al principio
+    if (n >= slides.length) { heroIndex = 0; }
+    // Si retrocedemos desde el inicio, va al final
+    if (n < 0) { heroIndex = slides.length - 1; }
+
+    // Quitar la clase active de todas las imágenes
+    slides.forEach(slide => slide.classList.remove('active'));
+
+    // Poner la clase active a la imagen actual
+    slides[heroIndex].classList.add('active');
+}
+
+function controlarHero(direccion) {
+    heroIndex += direccion;
+    mostrarHero(heroIndex);
+}
+
+// CAMBIO AUTOMÁTICO: Cambia cada 6 segundos
+setInterval(() => {
+    heroIndex++;
+    mostrarHero(heroIndex);
+}, 6000);

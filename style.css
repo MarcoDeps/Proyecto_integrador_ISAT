@@ -574,3 +574,56 @@ footer {
     position: static;
   }
 }
+
+.hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-slide {
+    display: none; /* Esconde las imágenes por defecto */
+    width: 100%;
+}
+
+.hero-slide.active {
+    display: block; /* Solo muestra la que tiene la clase active */
+    animation: fade 0.8s ease-in-out; /* Efecto suave de aparición */
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* Botones del Banner */
+.hero-prev, .hero-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 5px;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.hero-prev:hover, .hero-next:hover {
+    background-color: var(--primary-cyan); /* Usa tu color cyan */
+    color: black;
+}
+
+.hero-prev { left: 20px; }
+.hero-next { right: 20px; }
+
+/* Ajuste para que los botones se vean bien en celulares */
+@media (max-width: 600px) {
+    .hero-prev, .hero-next {
+        padding: 8px;
+        font-size: 18px;
+    }
+}

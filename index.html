@@ -62,12 +62,27 @@
 
     <main>
       <section class="hero">
-        <img
-          src="img/banner-principal.png"
-          alt="Promoción Gamer"
-          class="banner-img"
-        />
-      </section>
+    <div class="slider">
+        <div class="hero-slide active">
+            <img src="img/banner-principal.png" alt="Promoción Gamer 1" class="banner-img">
+        </div>
+        <div class="hero-slide">
+            <img src="img/banner2.png" alt="Promoción Gamer 2" class="banner-img">
+        </div>
+        <div class="hero-slide">
+            <img src="img/banner3.png" alt="Promoción Gamer 3" class="banner-img">
+        </div>
+        <div class="hero-slide">
+            <img src="img/banner4.png" alt="Promoción 4" class="banner-img">
+        </div>
+        <div class="hero-slide">
+            <img src="img/banner5.png" alt="Promoción 5" class="banner-img">
+      </div>
+
+        <button class="hero-prev" onclick="controlarHero(-1)">&#10094;</button>
+        <button class="hero-next" onclick="controlarHero(1)">&#10095;</button>
+    </div>
+</section>
 
       <section class="products-section">
         <h2 class="section-title">NUESTROS PRODUCTOS TOP</h2>
