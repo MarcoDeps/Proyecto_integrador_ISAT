@@ -627,3 +627,84 @@ footer {
         font-size: 18px;
     }
 }
+
+
+/* --- ESTILOS DEL MENÚ DESPLEGABLE --- */
+
+/* Contenedor principal del ítem Categorías */
+.dropdown {
+    position: relative; /* Importante para posicionar el menú hijo */
+}
+
+/* --- MEJORA PROFESIONAL DEL DROPDOWN --- */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 250px; /* Un poco más ancho para que respire el texto */
+    background: rgba(22, 27, 34, 0.98); /* Fondo semi-transparente estilo glassmorphism */
+    backdrop-filter: blur(10px); /* Desenfoque de fondo */
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--primary-cyan); /* Línea superior distintiva */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7); /* Sombra profunda */
+    z-index: 1100;
+    padding: 10px 0;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Estilo de cada fila */
+.dropdown-content li a {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    color: #e6edf3; /* Gris claro profesional, no blanco puro */
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre icono y texto */
+    transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Iconos dentro de la lista */
+.dropdown-content li a i {
+    color: var(--primary-cyan);
+    font-size: 1.1rem;
+    width: 25px; /* Ancho fijo para que los textos queden alineados */
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* Efecto HOVER (cuando pasas el mouse) */
+.dropdown-content li a:hover {
+    background: rgba(0, 188, 212, 0.1); /* Fondo cian muy sutil */
+    color: var(--primary-cyan);
+    padding-left: 30px; /* Desplazamiento elegante */
+}
+
+.dropdown-content li a:hover i {
+    opacity: 1;
+    transform: scale(1.2); /* El icono crece un poco */
+}
+
+/* Animación de aparición */
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: menuAppear 0.4s ease forwards;
+}
+
+@keyframes menuAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown:hover .dropbtn i {
+    transform: rotate(180deg);
+    color: var(--primary-cyan);
+    transition: 0.3s;
+}
