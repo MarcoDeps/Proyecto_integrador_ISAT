@@ -1,536 +1,527 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Netcraft | Tienda Gamer</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
 
-  <body>
-    <header>
-      <div class="header-container">
-        <div class="logo">
-          <img
-            src="img/logo.png"
-            alt="Netcraft Logo"
-            class="logo-img"
-            style="width: 50px; height: auto"
-          />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netcraft | Tienda Gamer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="img/logo.png" alt="Netcraft Logo" class="logo-img" style="width: 50px; height: auto" />
+      </div>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar componentes, periféricos..." />
+        <button class="search-btn">Buscar</button>
+      </div>
+
+      <nav class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html">INICIO</a></li>
+          <li><a href="productos.html">PRODUCTOS</a></li>
+
+          <li class="dropdown">
+            <a class="dropbtn" href="marcas.html">MARCAS <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-content">
+              <li><a href="productos.html?marca=asus"><i class="fas fa-angle-right"></i> Asus</a></li>
+              <li><a href="productos.html?marca=lenovo"><i class="fas fa-angle-right"></i> Lenovo</a></li>
+              <li><a href="productos.html?marca=hp"><i class="fas fa-angle-right"></i> HP</a></li>
+              <li><a href="productos.html?marca=acer"><i class="fas fa-angle-right"></i> Acer</a></li>
+              <li><a href="productos.html?marca=msi"><i class="fas fa-angle-right"></i> MSI</a></li>
+              <li><a href="productos.html?marca=gigabyte"><i class="fas fa-angle-right"></i> Gigabyte</a></li>
+              <li><a href="productos.html?marca=kingston"><i class="fas fa-angle-right"></i> Kingston</a></li>
+              <li><a href="productos.html?marca=logitech"><i class="fas fa-angle-right"></i> Logitech</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropbtn">CATEGORÍAS <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-content">
+              <li><a href="productos.html?categoria=procesadores"><i class="fas fa-microchip"></i> Procesadores</a></li>
+              <li><a href="productos.html?categoria=tarjetas-de-video"><i class="fas fa-memory"></i> Tarjetas de
+                  Video</a></li>
+              <li><a href="productos.html?categoria=laptops"><i class="fas fa-laptop"></i> Laptops</a></li>
+              <li><a href="productos.html?categoria=perifericos"><i class="fas fa-keyboard"></i> Periféricos</a></li>
+              <li><a href="productos.html?categoria=almacenamiento"><i class="fas fa-hdd"></i> Almacenamiento</a></li>
+              <li><a href="productos.html?categoria=monitores"><i class="fas fa-desktop"></i> Monitores</a></li>
+            </ul>
+          </li>
+
+          <li><a href="quienes-somos.html">QUIÉNES SOMOS</a></li>
+          <li><a href="tiendas.html">NUESTRAS TIENDAS</a></li>
+        </ul>
+
+        <div class="cart-icon" onclick="toggleCart()">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
         </div>
-
-        <div class="search-bar">
-          <input type="text" placeholder="Buscar componentes, periféricos..." />
-          <button class="search-btn">Buscar</button>
-        </div>
-
-        <nav class="nav-right">
-          <ul class="nav-links">
-  <li><a href="index.html" onclick="redirigir('Inicio')">INICIO</a></li>
-  <li><a href="productos.html" onclick="redirigir('Productos')">PRODUCTOS</a></li>
-  <li><a href="marcas.html" onclick="redirigir('Marcas')">MARCAS</a></li>
-  
-  <li class="dropdown">
-    <a href="#" class="dropbtn">CATEGORÍAS <i class="fas fa-chevron-down"></i></a>
-    <ul class="dropdown-content">
-        <li><a href="#" onclick="redirigir('Procesadores')"><i class="fas fa-microchip"></i> Procesadores</a></li>
-        <li><a href="#" onclick="redirigir('Tarjetas de Video')"><i class="fas fa-memory"></i> Tarjetas de Video</a></li>
-        <li><a href="#" onclick="redirigir('Laptops')"><i class="fas fa-laptop"></i> Laptops</a></li>
-        <li><a href="#" onclick="redirigir('Periféricos')"><i class="fas fa-keyboard"></i> Periféricos</a></li>
-        <li><a href="#" onclick="redirigir('Almacenamiento')"><i class="fas fa-hdd"></i> Almacenamiento</a></li>
-        <li><a href="#" onclick="redirigir('Monitores')"><i class="fas fa-desktop"></i> Monitores</a></li>
-    </ul>
-</li>
-
-  <li><a href="#" onclick="redirigir('Quiénes Somos')">QUIÉNES SOMOS</a></li>
-  <li><a href="tiendas.html" onclick="redirigir('Nuestras Tiendas')">NUESTRAS TIENDAS</a></li>
-</ul>
-          <div class="cart-icon" onclick="toggleCart()">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cart-count">0</span>
-          </div>
-        </nav>
-      </div>
-    </header>
-
-    <div id="sidebar" class="sidebar">
-      <div class="sidebar-header">
-        <h3>Tu Carrito</h3>
-        <button class="close-btn" onclick="toggleCart()">×</button>
-      </div>
-      <div id="cart-items" class="sidebar-body">
-        <p class="empty-msg">El carrito está vacío</p>
-      </div>
-      <div class="sidebar-footer">
-        <p>Total: S/. <span id="cart-total">0.00</span></p>
-        <button class="btn-checkout">PAGAR</button>
-      </div>
+      </nav>
     </div>
-    <div id="overlay" onclick="toggleCart()"></div>
+  </header>
 
-    <main>
-      <section class="hero">
-    <div class="slider">
+
+  
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <h3>Tu Carrito</h3>
+      <button class="close-btn" onclick="toggleCart()">×</button>
+    </div>
+    <div id="cart-items" class="sidebar-body">
+      <p class="empty-msg">El carrito está vacío</p>
+    </div>
+    <div class="sidebar-footer">
+      <p>Total: S/. <span id="cart-total">0.00</span></p>
+      <button class="btn-checkout">PAGAR</button>
+    </div>
+  </div>
+  <div id="overlay" onclick="toggleCart()"></div>
+
+  <main>
+    <section class="hero">
+      <div class="slider">
         <div class="hero-slide active">
-            <img src="img/banner-principal.png" alt="Promoción Gamer 1" class="banner-img">
+          <img src="img/banner-principal.png" alt="Promoción Gamer 1" class="banner-img">
         </div>
         <div class="hero-slide">
-            <img src="img/banner2.png" alt="Promoción Gamer 2" class="banner-img">
+          <img src="img/banner2.png" alt="Promoción Gamer 2" class="banner-img">
         </div>
         <div class="hero-slide">
-            <img src="img/banner3.png" alt="Promoción Gamer 3" class="banner-img">
+          <img src="img/banner3.png" alt="Promoción Gamer 3" class="banner-img">
         </div>
         <div class="hero-slide">
-            <img src="img/banner4.png" alt="Promoción 4" class="banner-img">
+          <img src="img/banner4.png" alt="Promoción 4" class="banner-img">
         </div>
         <div class="hero-slide">
-            <img src="img/banner5.png" alt="Promoción 5" class="banner-img">
-      </div>
+          <img src="img/banner5.png" alt="Promoción 5" class="banner-img">
+        </div>
 
         <button class="hero-prev" onclick="controlarHero(-1)">&#10094;</button>
         <button class="hero-next" onclick="controlarHero(1)">&#10095;</button>
-    </div>
-</section>
+      </div>
+    </section>
 
-      <section class="products-section">
-        <h2 class="section-title">NUESTROS PRODUCTOS TOP</h2>
-        <div class="product-grid">
-          <div class="card">
-            <img src="img/p1.png" alt="RTX 4070" />
-            <h4>Tarjeta RTX 4070</h4>
-            <p class="price">S/. 2,500</p>
-            <button
-              class="add-btn"
-              onclick="addToCart('Tarjeta RTX 4070', 2500)"
-            >
-              Agregar al carrito
-            </button>
-          </div>
-          <div class="card">
-            <img src="img/p2.png" alt="Teclado RGB" />
-            <h4>Teclado Mecánico RGB</h4>
-            <p class="price">S/. 350</p>
-            <button class="add-btn" onclick="addToCart('Teclado RGB', 350)">
-              Agregar al carrito
-            </button>
-          </div>
-          <div class="card">
-            <img src="img/p3.jpg" alt="Intel i7" />
-            <h4>Procesador Intel i7</h4>
-            <p class="price">S/. 1,800</p>
-            <button class="add-btn" onclick="addToCart('Intel i7', 1800)">
-              Agregar al carrito
-            </button>
-          </div>
-          <div class="card">
-            <img src="img/p4.jpg" alt="Monitor 144Hz" />
-            <h4>Monitor 144Hz</h4>
-            <p class="price">S/. 950</p>
-            <button class="add-btn" onclick="addToCart('Monitor 144Hz', 950)">
-              Agregar al carrito
-            </button>
-          </div>
-          <div class="card">
-            <img src="img/p5.jpg" alt="Pc gamer" />
-            <h4>Pc gamer</h4>
-            <p class="price">S/. 2,300</p>
-            <button
-              class="add-btn"
-              onclick="addToCart('Tarjeta RTX 4070', 2500)"
-            >
-              Agregar al carrito
-            </button>
-          </div>
-          <div class="card">
-            <img src="img/p6.jpg" alt="Procesador Amd Ryzen 3 " />
-            <h4>Procesador Amd Ryzen 3 3200g</h4>
-            <p class="price">S/. 266.15</p>
-            <button class="add-btn" onclick="addToCart('Teclado RGB', 350)">
-              Agregar al carrito
-            </button>
-          </div>
-          <div class="card">
-            <img src="img/p7.jpg" alt="Placa Madre" />
-            <h4>Placa Madre Gigabyte X870 Eagle Wifi 7 (X870 Eagle Wifi7)</h4>
-            <p class="price">S/. 1,800</p>
-            <button class="add-btn" onclick="addToCart('Intel i7', 1800)">
-              Agregar al carrito
-            </button>
-          </div>
-          <div class="card">
-            <img
-              src="img/p8.jpg"
-              alt="Lenovo IdeaPad 3 15IAH7, Core i5-12450H"
-            />
-            <h4>Lenovo IdeaPad 3 15IAH7, Core i5-12450H</h4>
-            <p class="price">S/. 950</p>
-            <button class="add-btn" onclick="addToCart('Monitor 144Hz', 950)">
-              Agregar al carrito
-            </button>
-          </div>
+    <section class="products-section">
+      <h2 class="section-title">NUESTROS PRODUCTOS TOP</h2>
+      <div class="product-grid">
+        <div class="card">
+          <img src="img/p1.png" alt="RTX 4070" />
+          <h4>Tarjeta RTX 4070</h4>
+          <p class="price">S/. 2,500</p>
+          <button class="add-btn" onclick="addToCart('Tarjeta RTX 4070', 2500)">
+            Agregar al carrito
+          </button>
         </div>
-      </section>
-
-      <section class="testimonials">
-        <div class="reviews-container">
-          <div class="review-card">
-            <p>
-              "Excelente calidad de los productos, Juan Pérez me atendió muy
-              bien."
-            </p>
-            <cite>- Juan Pérez</cite>
-          </div>
-          <div class="review-card">
-            <p>"La mejor tienda gamer de Lima, la laptop que compré vuela."</p>
-            <cite>- María García</cite>
-          </div>
+        <div class="card">
+          <img src="img/p2.png" alt="Teclado RGB" />
+          <h4>Teclado Mecánico RGB</h4>
+          <p class="price">S/. 350</p>
+          <button class="add-btn" onclick="addToCart('Teclado RGB', 350)">
+            Agregar al carrito
+          </button>
         </div>
-      </section>
+        <div class="card">
+          <img src="img/p3.jpg" alt="Intel i7" />
+          <h4>Procesador Intel i7</h4>
+          <p class="price">S/. 1,800</p>
+          <button class="add-btn" onclick="addToCart('Intel i7', 1800)">
+            Agregar al carrito
+          </button>
+        </div>
+        <div class="card">
+          <img src="img/p4.jpg" alt="Monitor 144Hz" />
+          <h4>Monitor 144Hz</h4>
+          <p class="price">S/. 950</p>
+          <button class="add-btn" onclick="addToCart('Monitor 144Hz', 950)">
+            Agregar al carrito
+          </button>
+        </div>
+        <div class="card">
+          <img src="img/p5.jpg" alt="Pc gamer" />
+          <h4>Pc gamer</h4>
+          <p class="price">S/. 2,300</p>
+          <button class="add-btn" onclick="addToCart('Tarjeta RTX 4070', 2500)">
+            Agregar al carrito
+          </button>
+        </div>
+        <div class="card">
+          <img src="img/p6.jpg" alt="Procesador Amd Ryzen 3 " />
+          <h4>Procesador Amd Ryzen 3 3200g</h4>
+          <p class="price">S/. 266.15</p>
+          <button class="add-btn" onclick="addToCart('Teclado RGB', 350)">
+            Agregar al carrito
+          </button>
+        </div>
+        <div class="card">
+          <img src="img/p7.jpg" alt="Placa Madre" />
+          <h4>Placa Madre Gigabyte X870 Eagle Wifi 7 (X870 Eagle Wifi7)</h4>
+          <p class="price">S/. 1,800</p>
+          <button class="add-btn" onclick="addToCart('Intel i7', 1800)">
+            Agregar al carrito
+          </button>
+        </div>
+        <div class="card">
+          <img src="img/p8.jpg" alt="Lenovo IdeaPad 3 15IAH7, Core i5-12450H" />
+          <h4>Lenovo IdeaPad 3 15IAH7, Core i5-12450H</h4>
+          <p class="price">S/. 950</p>
+          <button class="add-btn" onclick="addToCart('Monitor 144Hz', 950)">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+    </section>
 
-      <section class="location-map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.1643444458316!2d-77.0315486!3d-11.9631628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d105a49826f7%3A0x7d60f5453051469e!2sISAT!5e0!3m2!1ses!2spe!4v1680000000000"
-          width="100%"
-          height="400"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-        ></iframe>
-      </section>
-    </main>
+    <section class="testimonials">
+      <div class="reviews-container">
+        <div class="review-card">
+          <p>
+            "Excelente calidad de los productos, Juan Pérez me atendió muy
+            bien."
+          </p>
+          <cite>- Juan Pérez</cite>
+        </div>
+        <div class="review-card">
+          <p>"La mejor tienda gamer de Lima, la laptop que compré vuela."</p>
+          <cite>- María García</cite>
+        </div>
+      </div>
+    </section>
 
-   <footer>
-  <div class="footer-container">
-    <div class="f-logo-area">
-      <img src="img/logo.png" alt="Logo Footer" width="100" />
+    <section class="location-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.1643444458316!2d-77.0315486!3d-11.9631628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d105a49826f7%3A0x7d60f5453051469e!2sISAT!5e0!3m2!1ses!2spe!4v1680000000000"
+        width="100%" height="400" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="f-logo-area">
+        <img src="img/logo.png" alt="Logo Footer" width="100" />
+      </div>
+      <div class="f-links">
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="como-comprar.html">¿Cómo comprar?</a></li>
+          <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+          <li><a href="terminos-y-condiciones.html">Términos y condiciones</a></li>
+        </ul>
+      </div>
+      <div class="f-reclamaciones">
+        <a href="libro-reclamaciones.html">
+          <img src="img/libro-de-reclamaciones.jpg" alt="Libro de Reclamaciones" class="lib-img" />
+        </a>
+      </div>
     </div>
-    <div class="f-links">
-      <ul>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="como-comprar.html">¿Cómo comprar?</a></li>
-        <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
-        <li><a href="terminos-y-condiciones.html">Términos y condiciones</a></li>
-      </ul>
+    <p class="copy">© 2026 Grupo 2 - Proyecto Académico ISAT</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <style>
+    #netbot-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 99999;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0, 114, 255, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+    }
+
+    #netbot-btn:hover {
+      transform: scale(1.1);
+    }
+
+    #netbot-btn svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+    }
+
+    /* Ventana de Chat */
+    #netbot-window {
+      position: fixed;
+      bottom: 96px;
+      right: 24px;
+      z-index: 99998;
+      width: 360px;
+      /* Ancho en computadora */
+      height: 520px;
+      max-height: calc(100% - 120px);
+      background: #1a1a2e;
+      border-radius: 18px;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: sans-serif;
+      transition: all 0.3s ease;
+      /* Para que abra suave */
+    }
+
+    /* ESTADO ABIERTO */
+    #netbot-window.open {
+      display: flex;
+    }
+
+    /* AJUSTE PARA CELULARES (Pantallas pequeñas) */
+    @media (max-width: 600px) {
+      #netbot-window {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+        max-height: 100%;
+      }
+
+      #netbot-btn {
+        bottom: 15px;
+        right: 15px;
+      }
+    }
+
+    /* Diseño interno del chat */
+    #netbot-header {
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    #netbot-header .info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #netbot-header .avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    #netbot-header .name {
+      color: white;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    #netbot-header .status {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 12px;
+    }
+
+    #netbot-close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 5px;
+    }
+
+    #netbot-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #0f0f1a;
+    }
+
+    .netbot-msg {
+      max-width: 80%;
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .netbot-msg.bot {
+      background: #1e2a45;
+      color: #e0e0e0;
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+    }
+
+    .netbot-msg.user {
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      color: white;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+
+    #netbot-typing {
+      color: #888;
+      font-size: 13px;
+      padding: 0 16px 8px;
+      background: #0f0f1a;
+      display: none;
+    }
+
+    #netbot-input-area {
+      display: flex;
+      gap: 8px;
+      padding: 12px 14px;
+      background: #1a1a2e;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    #netbot-input {
+      flex: 1;
+      background: #0f0f1a;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      padding: 10px 16px;
+      color: white;
+      font-size: 16px;
+      /* 16px para evitar zoom automático en iPhone */
+      outline: none;
+    }
+
+    #netbot-send {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    #netbot-send svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+    }
+  </style>
+
+  <button id="netbot-btn" onclick="toggleNetBot()" title="Chatear con NetBot">
+    <svg viewBox="0 0 24 24">
+      <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+    </svg>
+  </button>
+
+  <div id="netbot-window">
+    <div id="netbot-header">
+      <div class="info">
+        <div class="avatar">🎮</div>
+        <div>
+          <div class="name">NetBot</div>
+          <div class="status">● Disponible 24/7</div>
+        </div>
+      </div>
+      <button id="netbot-close" onclick="toggleNetBot()">&times;</button>
     </div>
-    <div class="f-reclamaciones">
-      <a href="libro-reclamaciones.html">
-        <img src="img/libro-de-reclamaciones.jpg" alt="Libro de Reclamaciones" class="lib-img" />
-      </a>
+
+    <div id="netbot-messages">
+      <div class="netbot-msg bot">¡Hola! 👋</div>
+      <div class="netbot-msg bot">
+        Soy NetBot, el asistente de NetCraft Computer Store. ¿En qué te puedo
+        ayudar hoy?
+      </div>
+    </div>
+    <div id="netbot-typing">NetBot está escribiendo...</div>
+
+    <div id="netbot-input-area">
+      <input id="netbot-input" type="text" placeholder="Escríbeme lo que necesitas..."
+        onkeydown="if (event.key === 'Enter') sendNetBotMsg();" />
+      <button id="netbot-send" onclick="sendNetBotMsg()">
+        <svg viewBox="0 0 24 24">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+        </svg>
+      </button>
     </div>
   </div>
-  <p class="copy">© 2026 Grupo 2 - Proyecto Académico ISAT</p>
-</footer>
 
-    <script src="script.js"></script>
+  <script>
+    const NETBOT_WEBHOOK =
+      "https://paneln8n.serviciosatumedidapro.com/webhook/3730d8bd-2059-48b9-a450-bfa589295b74/chat";
+    let netbotSession = "session_" + Math.random().toString(36).substr(2, 9);
+    let netbotOpen = false;
 
-    <style>
-      #netbot-btn {
-        position: fixed;
-        bottom: 24px;
-        right: 24px;
-        z-index: 99999;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #00c6ff, #0072ff);
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 4px 20px rgba(0, 114, 255, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.2s;
+    function toggleNetBot() {
+      netbotOpen = !netbotOpen;
+      const win = document.getElementById("netbot-window");
+      win.classList.toggle("open", netbotOpen);
+      if (netbotOpen) {
+        document.getElementById("netbot-input").focus();
       }
+    }
 
-      #netbot-btn:hover {
-        transform: scale(1.1);
+    function addNetBotMsg(text, role) {
+      const box = document.getElementById("netbot-messages");
+      const div = document.createElement("div");
+      div.className = "netbot-msg " + role;
+      div.textContent = text;
+      box.appendChild(div);
+      box.scrollTop = box.scrollHeight;
+    }
+
+    async function sendNetBotMsg() {
+      const input = document.getElementById("netbot-input");
+      const text = input.value.trim();
+      if (!text) return;
+
+      input.value = "";
+      addNetBotMsg(text, "user");
+
+      const typing = document.getElementById("netbot-typing");
+      typing.style.display = "block";
+
+      try {
+        const res = await fetch(NETBOT_WEBHOOK, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            action: "sendMessage",
+            sessionId: netbotSession,
+            chatInput: text,
+          }),
+        });
+        const data = await res.json();
+        typing.style.display = "none";
+        const reply =
+          data.output ||
+          data.text ||
+          data.message ||
+          "Sin respuesta del servidor.";
+        addNetBotMsg(reply, "bot");
+      } catch (e) {
+        typing.style.display = "none";
+        addNetBotMsg(
+          "Ups, hubo un error de conexión. Intenta de nuevo 🙏",
+          "bot",
+        );
       }
+    }
+  </script>
+</body>
 
-      #netbot-btn svg {
-        width: 28px;
-        height: 28px;
-        fill: white;
-      }
-
-      /* Ventana de Chat */
-      #netbot-window {
-        position: fixed;
-        bottom: 96px;
-        right: 24px;
-        z-index: 99998;
-        width: 360px;
-        /* Ancho en computadora */
-        height: 520px;
-        max-height: calc(100% - 120px);
-        background: #1a1a2e;
-        border-radius: 18px;
-        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
-        display: none;
-        flex-direction: column;
-        overflow: hidden;
-        font-family: sans-serif;
-        transition: all 0.3s ease;
-        /* Para que abra suave */
-      }
-
-      /* ESTADO ABIERTO */
-      #netbot-window.open {
-        display: flex;
-      }
-
-      /* AJUSTE PARA CELULARES (Pantallas pequeñas) */
-      @media (max-width: 600px) {
-        #netbot-window {
-          width: 100%;
-          height: 100%;
-          bottom: 0;
-          right: 0;
-          border-radius: 0;
-          max-height: 100%;
-        }
-
-        #netbot-btn {
-          bottom: 15px;
-          right: 15px;
-        }
-      }
-
-      /* Diseño interno del chat */
-      #netbot-header {
-        background: linear-gradient(135deg, #0072ff, #00c6ff);
-        padding: 14px 18px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      #netbot-header .info {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      #netbot-header .avatar {
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        background: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-      }
-
-      #netbot-header .name {
-        color: white;
-        font-weight: 600;
-        font-size: 15px;
-      }
-
-      #netbot-header .status {
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 12px;
-      }
-
-      #netbot-close {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 30px;
-        cursor: pointer;
-        line-height: 1;
-        padding: 5px;
-      }
-
-      #netbot-messages {
-        flex: 1;
-        overflow-y: auto;
-        padding: 16px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        background: #0f0f1a;
-      }
-
-      .netbot-msg {
-        max-width: 80%;
-        padding: 10px 14px;
-        border-radius: 14px;
-        font-size: 14px;
-        line-height: 1.5;
-      }
-
-      .netbot-msg.bot {
-        background: #1e2a45;
-        color: #e0e0e0;
-        align-self: flex-start;
-        border-bottom-left-radius: 4px;
-      }
-
-      .netbot-msg.user {
-        background: linear-gradient(135deg, #0072ff, #00c6ff);
-        color: white;
-        align-self: flex-end;
-        border-bottom-right-radius: 4px;
-      }
-
-      #netbot-typing {
-        color: #888;
-        font-size: 13px;
-        padding: 0 16px 8px;
-        background: #0f0f1a;
-        display: none;
-      }
-
-      #netbot-input-area {
-        display: flex;
-        gap: 8px;
-        padding: 12px 14px;
-        background: #1a1a2e;
-        border-top: 1px solid rgba(255, 255, 255, 0.07);
-      }
-
-      #netbot-input {
-        flex: 1;
-        background: #0f0f1a;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 24px;
-        padding: 10px 16px;
-        color: white;
-        font-size: 16px;
-        /* 16px para evitar zoom automático en iPhone */
-        outline: none;
-      }
-
-      #netbot-send {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #0072ff, #00c6ff);
-        border: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-
-      #netbot-send svg {
-        width: 18px;
-        height: 18px;
-        fill: white;
-      }
-    </style>
-
-    <button id="netbot-btn" onclick="toggleNetBot()" title="Chatear con NetBot">
-      <svg viewBox="0 0 24 24">
-        <path
-          d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"
-        />
-      </svg>
-    </button>
-
-    <div id="netbot-window">
-      <div id="netbot-header">
-        <div class="info">
-          <div class="avatar">🎮</div>
-          <div>
-            <div class="name">NetBot</div>
-            <div class="status">● Disponible 24/7</div>
-          </div>
-        </div>
-        <button id="netbot-close" onclick="toggleNetBot()">&times;</button>
-      </div>
-
-      <div id="netbot-messages">
-        <div class="netbot-msg bot">¡Hola! 👋</div>
-        <div class="netbot-msg bot">
-          Soy NetBot, el asistente de NetCraft Computer Store. ¿En qué te puedo
-          ayudar hoy?
-        </div>
-      </div>
-      <div id="netbot-typing">NetBot está escribiendo...</div>
-
-      <div id="netbot-input-area">
-        <input
-          id="netbot-input"
-          type="text"
-          placeholder="Escríbeme lo que necesitas..."
-          onkeydown="if (event.key === 'Enter') sendNetBotMsg();"
-        />
-        <button id="netbot-send" onclick="sendNetBotMsg()">
-          <svg viewBox="0 0 24 24">
-            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <script>
-      const NETBOT_WEBHOOK =
-        "https://paneln8n.serviciosatumedidapro.com/webhook/3730d8bd-2059-48b9-a450-bfa589295b74/chat";
-      let netbotSession = "session_" + Math.random().toString(36).substr(2, 9);
-      let netbotOpen = false;
-
-      function toggleNetBot() {
-        netbotOpen = !netbotOpen;
-        const win = document.getElementById("netbot-window");
-        win.classList.toggle("open", netbotOpen);
-        if (netbotOpen) {
-          document.getElementById("netbot-input").focus();
-        }
-      }
-
-      function addNetBotMsg(text, role) {
-        const box = document.getElementById("netbot-messages");
-        const div = document.createElement("div");
-        div.className = "netbot-msg " + role;
-        div.textContent = text;
-        box.appendChild(div);
-        box.scrollTop = box.scrollHeight;
-      }
-
-      async function sendNetBotMsg() {
-        const input = document.getElementById("netbot-input");
-        const text = input.value.trim();
-        if (!text) return;
-
-        input.value = "";
-        addNetBotMsg(text, "user");
-
-        const typing = document.getElementById("netbot-typing");
-        typing.style.display = "block";
-
-        try {
-          const res = await fetch(NETBOT_WEBHOOK, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              action: "sendMessage",
-              sessionId: netbotSession,
-              chatInput: text,
-            }),
-          });
-          const data = await res.json();
-          typing.style.display = "none";
-          const reply =
-            data.output ||
-            data.text ||
-            data.message ||
-            "Sin respuesta del servidor.";
-          addNetBotMsg(reply, "bot");
-        } catch (e) {
-          typing.style.display = "none";
-          addNetBotMsg(
-            "Ups, hubo un error de conexión. Intenta de nuevo 🙏",
-            "bot",
-          );
-        }
-      }
-    </script>
-  </body>
 </html>

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netcraft | Tienda Gamer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Encabezado con logo, barra de búsqueda y navegación -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="img/logo.png" alt="Netcraft Logo" class="logo-img" style="width: 50px; height: auto" />
+      </div>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar componentes, periféricos..." />
+        <button class="search-btn">Buscar</button>
+      </div>
+
+      <nav class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html">INICIO</a></li>
+          <li><a href="productos.html">PRODUCTOS</a></li>
+
+          <li class="dropdown">
+            <a class="dropbtn" href="marcas.html">MARCAS <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-content">
+              <li><a href="productos.html?marca=asus"><i class="fas fa-angle-right"></i> Asus</a></li>
+              <li><a href="productos.html?marca=lenovo"><i class="fas fa-angle-right"></i> Lenovo</a></li>
+              <li><a href="productos.html?marca=hp"><i class="fas fa-angle-right"></i> HP</a></li>
+              <li><a href="productos.html?marca=acer"><i class="fas fa-angle-right"></i> Acer</a></li>
+              <li><a href="productos.html?marca=msi"><i class="fas fa-angle-right"></i> MSI</a></li>
+              <li><a href="productos.html?marca=gigabyte"><i class="fas fa-angle-right"></i> Gigabyte</a></li>
+              <li><a href="productos.html?marca=kingston"><i class="fas fa-angle-right"></i> Kingston</a></li>
+              <li><a href="productos.html?marca=logitech"><i class="fas fa-angle-right"></i> Logitech</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropbtn">CATEGORÍAS <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-content">
+              <li><a href="productos.html?categoria=procesadores"><i class="fas fa-microchip"></i> Procesadores</a></li>
+              <li><a href="productos.html?categoria=tarjetas-de-video"><i class="fas fa-memory"></i> Tarjetas de
+                  Video</a></li>
+              <li><a href="productos.html?categoria=laptops"><i class="fas fa-laptop"></i> Laptops</a></li>
+              <li><a href="productos.html?categoria=perifericos"><i class="fas fa-keyboard"></i> Periféricos</a></li>
+              <li><a href="productos.html?categoria=almacenamiento"><i class="fas fa-hdd"></i> Almacenamiento</a></li>
+              <li><a href="productos.html?categoria=monitores"><i class="fas fa-desktop"></i> Monitores</a></li>
+            </ul>
+          </li>
+
+          <li><a href="quienes-somos.html">QUIÉNES SOMOS</a></li>
+          <li><a href="tiendas.html">NUESTRAS TIENDAS</a></li>
+        </ul>
+
+        <div class="cart-icon" onclick="toggleCart()">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sidebar del Carrito de Compras -->
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <h3>Tu Carrito</h3>
+      <button class="close-btn" onclick="toggleCart()">×</button>
+    </div>
+    <div id="cart-items" class="sidebar-body">
+      <p class="empty-msg">El carrito está vacío</p>
+    </div>
+    <div class="sidebar-footer">
+      <p>Total: S/. <span id="cart-total">0.00</span></p>
+      <button class="btn-checkout">PAGAR</button>
+    </div>
+  </div>
+  <div id="overlay" onclick="toggleCart()"></div>
+
+    <title>Quiénes Somos</title>
+    
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            color: #333;
+        }
+
+        .seccion-nosotros {
+            padding: 50px 5%;
+            background-color: #ffffff;
+        }
+
+        /* Contenedor Flexible */
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap; /* Permite que los elementos se apilen en pantallas chicas */
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+
+        /* Caja de Texto */
+        .texto {
+            flex: 1 1 400px; /* Base de 400px, crece si hay espacio */
+        }
+
+        .texto h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+        }
+
+        .texto p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* Caja de Imagen */
+        .imagen {
+            flex: 1 1 400px;
+            text-align: center;
+        }
+
+        .imagen img {
+            max-width: 100%; /* Evita que la imagen se salga del contenedor */
+            height: auto;    /* Mantiene la proporción */
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* 📱 Media Query para Móviles (Pantallas menores a 768px) */
+        @media (max-width: 768px) {
+            .texto {
+                text-align: center; /* Centra el texto en el celular */
+                order: 2; /* Pone el texto debajo de la imagen si prefieres */
+            }
+            .imagen {
+                order: 1;
+            }
+            .texto h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="seccion-nosotros">
+        <div class="flex-container">
+            
+            <!-- Columna de Texto -->
+            <div class="texto">
+                <h1>Sobre Nosotros</h1>
+                <p>Somos una empresa peruana y nos dedicamos a ofrecer las mejores soluciones tecnológicas con un enfoque humano y creativo para nuestros clientes.</p>
+                <p>Nuestra meta es simplificar tu vida a través de herramientas innovadoras y un soporte excepcional que nos distingue en el mercado.</p>
+            </div>
+
+            <!-- Columna de Imagen -->
+            <div class="imagen">
+                <!-- Reemplaza el src con la ruta de tu imagen -->
+                <img src="img/tienda_logo.png" alt="Nuestro equipo trabajando">
+            </div>
+
+        </div>
+    </section>
+
+      <footer>
+      <div class="footer-container">
+        <div class="f-logo-area">
+          <img src="img/logo.png" alt="Logo Footer" width="100" />
+        </div>
+        <div class="f-links">
+          <ul>
+            <li><a href="#" onclick="redirigir('Blog')">Blog</a></li>
+            <li>
+              <a href="#" onclick="redirigir('¿Cómo comprar?')"
+                >¿Cómo comprar?</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="redirigir('Preguntas frecuentes')"
+                >Preguntas frecuentes</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="redirigir('Términos y condiciones')"
+                >Términos y condiciones</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="f-reclamaciones">
+          <img
+            src="img/libro-de-reclamaciones.jpg"
+            alt="Libro de Reclamaciones"
+            class="lib-img"
+          />
+        </div>
+      </div>
+      <p class="copy">© 2026 Grupo 2 - Proyecto Académico ISAT</p>
+    </footer>
+
+</body>
+</html>
+

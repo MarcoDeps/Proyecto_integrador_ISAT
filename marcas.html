@@ -24,13 +24,40 @@
 
       <nav class="nav-right">
         <ul class="nav-links">
-          <li><a href="index.html" onclick="redirigir('Inicio')">INICIO</a></li>
-          <li><a href="productos.html" onclick="redirigir('Productos')">PRODUCTOS</a></li>
-          <li><a href="marcas.html" onclick="redirigir('Marcas')">MARCAS</a></li>
-          <li><a href="#" onclick="redirigir('Categorías')">CATEGORÍAS</a></li>
-          <li><a href="#" onclick="redirigir('Quiénes Somos')">QUIÉNES SOMOS</a></li>
-          <li><a href="tiendas.html" onclick="redirigir('Nuestras Tiendas')">NUESTRAS TIENDAS</a></li>
+          <li><a href="index.html">INICIO</a></li>
+          <li><a href="productos.html">PRODUCTOS</a></li>
+
+          <li class="dropdown">
+            <a class="dropbtn" href="marcas.html">MARCAS <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-content">
+              <li><a href="productos.html?marca=asus"><i class="fas fa-angle-right"></i> Asus</a></li>
+              <li><a href="productos.html?marca=lenovo"><i class="fas fa-angle-right"></i> Lenovo</a></li>
+              <li><a href="productos.html?marca=hp"><i class="fas fa-angle-right"></i> HP</a></li>
+              <li><a href="productos.html?marca=acer"><i class="fas fa-angle-right"></i> Acer</a></li>
+              <li><a href="productos.html?marca=msi"><i class="fas fa-angle-right"></i> MSI</a></li>
+              <li><a href="productos.html?marca=gigabyte"><i class="fas fa-angle-right"></i> Gigabyte</a></li>
+              <li><a href="productos.html?marca=kingston"><i class="fas fa-angle-right"></i> Kingston</a></li>
+              <li><a href="productos.html?marca=logitech"><i class="fas fa-angle-right"></i> Logitech</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropbtn">CATEGORÍAS <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-content">
+              <li><a href="productos.html?categoria=procesadores"><i class="fas fa-microchip"></i> Procesadores</a></li>
+              <li><a href="productos.html?categoria=tarjetas-de-video"><i class="fas fa-memory"></i> Tarjetas de
+                  Video</a></li>
+              <li><a href="productos.html?categoria=laptops"><i class="fas fa-laptop"></i> Laptops</a></li>
+              <li><a href="productos.html?categoria=perifericos"><i class="fas fa-keyboard"></i> Periféricos</a></li>
+              <li><a href="productos.html?categoria=almacenamiento"><i class="fas fa-hdd"></i> Almacenamiento</a></li>
+              <li><a href="productos.html?categoria=monitores"><i class="fas fa-desktop"></i> Monitores</a></li>
+            </ul>
+          </li>
+
+          <li><a href="quienes-somos.html">QUIÉNES SOMOS</a></li>
+          <li><a href="tiendas.html">NUESTRAS TIENDAS</a></li>
         </ul>
+
         <div class="cart-icon" onclick="toggleCart()">
           <i class="fas fa-shopping-cart"></i>
           <span id="cart-count">0</span>
