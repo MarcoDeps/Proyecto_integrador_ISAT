@@ -1,5 +1,6 @@
 let cartCount = 0;
 let cartTotal = 0;
+let allProducts = [];
 
 // Función para abrir/cerrar el carrito
 function toggleCart() {
@@ -34,115 +35,181 @@ function redirigir(seccion) {
   alert("Esta página dice:\n\nRedirigiendo a la sección de " + seccion);
 }
 
-/* script.js  para la pestaña productos aplicando sus filtros*/
+// NUEVA FUNCIÓN: Cambiar mapa de tiendas
+function cambiarMapa(query) {
+  const mapIframe = document.getElementById("mapa-iframe");
+  if (mapIframe) {
+    mapIframe.src = `https://maps.google.com/maps?q=${encodeURIComponent(query)}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+    mapIframe.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
 
-// Esperar a que el DOM cargue
-document.addEventListener("DOMContentLoaded", () => {
-  // 1. Lógica para capturar parámetro de URL (Cuando vienes de marcas.html)
+// --- LÓGICA DE CARGA DINÁMICA DE PRODUCTOS ---
+
+async function cargarProductos() {
+  try {
+    const response = await fetch('productos.json');
+    allProducts = await response.json();
+    
+    const path = window.location.pathname;
+    
+    if (path.includes('index.html') || path === '/' || path.endsWith('Proyecto_integrador_ISAT/')) {
+      renderizarProductosHome();
+    } else if (path.includes('productos.html')) {
+      renderizarProductosCatalogo();
+    }
+  } catch (error) {
+    console.error("Error cargando productos:", error);
+  }
+}
+
+function renderizarProductosHome() {
+  const container = document.querySelector('.product-grid');
+  if (!container) return;
+  
+  container.innerHTML = "";
+  // Solo mostrar productos marcados como "top"
+  const topProducts = allProducts.filter(p => p.top);
+  
+  topProducts.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <img src="${p.imagen}" alt="${p.nombre}" />
+      <h4>${p.nombre}</h4>
+      <p class="price">S/. ${p.precio}</p>
+      <button class="add-btn" onclick="addToCart('${p.nombre}', ${p.precio})">
+        Agregar al carrito
+      </button>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function renderizarProductosCatalogo() {
+  const container = document.getElementById('contenedor-productos');
+  if (!container) return;
+  
+  container.innerHTML = "";
+  allProducts.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.setAttribute('data-marca', p.marca);
+    card.setAttribute('data-categoria', p.categoria);
+    card.innerHTML = `
+      <img src="${p.imagen}" alt="${p.nombre}" />
+      <div class="product-info">
+        <span class="brand-tag">${p.marca.toUpperCase()}</span>
+        <h4 class="product-name">${p.nombre}</h4>
+        <div class="price-container">
+          <span class="current-price">S/ ${p.precio.toFixed(2)}</span>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart('${p.nombre}', ${p.precio})">
+          <i class="fas fa-shopping-cart"></i> Agregar
+        </button>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+
+  // Una vez renderizados, aplicar filtros si existen parámetros en la URL
+  inicializarFiltros();
+}
+
+function inicializarFiltros() {
   const parametrosURL = new URLSearchParams(window.location.search);
   const marcaDesdeURL = parametrosURL.get("marca");
+  const categoriaDesdeURL = parametrosURL.get("categoria");
 
   if (marcaDesdeURL) {
-    // Buscar el checkbox correspondiente y marcarlo
-    const checkbox = document.querySelector(
-      `.filter-checkbox[value="${marcaDesdeURL.toLowerCase()}"]`,
-    );
-    if (checkbox) {
-      checkbox.checked = true;
-    }
+    const checkbox = document.querySelector(`.filter-checkbox[value="${marcaDesdeURL.toLowerCase()}"]`);
+    if (checkbox) checkbox.checked = true;
+  }
+  
+  if (categoriaDesdeURL) {
+    const checkbox = document.querySelector(`.filter-checkbox[value="${categoriaDesdeURL.toLowerCase()}"]`);
+    if (checkbox) checkbox.checked = true;
   }
 
-  // Ejecutar filtro inicial (aplica si hay parámetro URL o muestra todos si no hay)
   aplicarFiltros();
+}
 
-  // 2. Lógica para escuchar cambios en los checkboxes
-  const checkboxes = document.querySelectorAll(".filter-checkbox");
-  checkboxes.forEach((box) => {
-    box.addEventListener("change", aplicarFiltros);
-  });
-});
+// --- FILTROS ---
 
-// Función principal de filtrado
 function aplicarFiltros() {
-  // Obtener todos los checkboxes marcados
-  const checkboxesMarcados = document.querySelectorAll(
-    ".filter-checkbox:checked",
-  );
-  const marcasActivas = Array.from(checkboxesMarcados).map((cb) => cb.value);
+  const checkboxesMarcados = document.querySelectorAll(".filter-checkbox:checked");
+  const filtrosActivos = Array.from(checkboxesMarcados).map((cb) => cb.value);
 
-  // Obtener todos los productos
   const productos = document.querySelectorAll(".product-card");
 
   productos.forEach((producto) => {
     const marcaProducto = producto.getAttribute("data-marca").toLowerCase();
+    const categoriaProducto = producto.getAttribute("data-categoria").toLowerCase();
 
-    // Si no hay ninguna marca seleccionada, mostrar todo
-    if (marcasActivas.length === 0) {
+    if (filtrosActivos.length === 0) {
       producto.style.display = "flex";
     } else {
-      // Si la marca del producto está en el array de marcas seleccionadas, mostrar
-      if (marcasActivas.includes(marcaProducto)) {
+      // Mostrar si coincide con marca O categoría (ajustable a Y si se prefiere)
+      if (filtrosActivos.includes(marcaProducto) || filtrosActivos.includes(categoriaProducto)) {
         producto.style.display = "flex";
       } else {
-        // Si no, ocultar
         producto.style.display = "none";
       }
     }
   });
 }
 
-// Función para el botón "Limpiar Filtros"
 function limpiarFiltros() {
-  // Selecciona todos los checkboxes independientemente de su clase,
-  // siempre y cuando estén dentro del contenedor sidebar-filters.
-  const checkboxes = document.querySelectorAll(
-    '.sidebar-filters input[type="checkbox"]',
-  );
-
+  const checkboxes = document.querySelectorAll('.sidebar-filters input[type="checkbox"]');
   checkboxes.forEach((box) => {
     box.checked = false;
   });
 
   if (window.history.replaceState) {
-    const urlSinParametros =
-      window.location.protocol +
-      "//" +
-      window.location.host +
-      window.location.pathname;
-    window.history.replaceState(
-      { path: urlSinParametros },
-      "",
-      urlSinParametros,
-    );
+    const urlSinParametros = window.location.protocol + "//" + window.location.host + window.location.pathname;
+    window.history.replaceState({ path: urlSinParametros }, "", urlSinParametros);
   }
 
   aplicarFiltros();
 }
 
+// --- SLIDER ---
+
 let heroIndex = 0;
 
 function mostrarHero(n) {
-    const slides = document.querySelectorAll('.hero-slide');
-    
-    // Si llegamos al final, vuelve al principio
-    if (n >= slides.length) { heroIndex = 0; }
-    // Si retrocedemos desde el inicio, va al final
-    if (n < 0) { heroIndex = slides.length - 1; }
+  const slides = document.querySelectorAll('.hero-slide');
+  if (slides.length === 0) return;
+  
+  if (n >= slides.length) { heroIndex = 0; }
+  if (n < 0) { heroIndex = slides.length - 1; }
 
-    // Quitar la clase active de todas las imágenes
-    slides.forEach(slide => slide.classList.remove('active'));
-
-    // Poner la clase active a la imagen actual
-    slides[heroIndex].classList.add('active');
+  slides.forEach(slide => slide.classList.remove('active'));
+  slides[heroIndex].classList.add('active');
 }
 
 function controlarHero(direccion) {
-    heroIndex += direccion;
-    mostrarHero(heroIndex);
+  heroIndex += direccion;
+  mostrarHero(heroIndex);
 }
 
-// CAMBIO AUTOMÁTICO: Cambia cada 6 segundos
-setInterval(() => {
-    heroIndex++;
-    mostrarHero(heroIndex);
-}, 6000);
+// --- INICIALIZACIÓN ---
+
+document.addEventListener("DOMContentLoaded", () => {
+  cargarProductos();
+
+  // Slider auto-change
+  const slides = document.querySelectorAll('.hero-slide');
+  if (slides.length > 0) {
+    setInterval(() => {
+      heroIndex++;
+      mostrarHero(heroIndex);
+    }, 6000);
+  }
+
+  // Eventos para filtros
+  const checkboxes = document.querySelectorAll(".filter-checkbox");
+  checkboxes.forEach((box) => {
+    box.addEventListener("change", aplicarFiltros);
+  });
+});
