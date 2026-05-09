@@ -74,60 +74,67 @@
       <div class="brand-grid">
 
         <!-- Tienda 1 -->
-        <div class="brand-card card-marca" onclick="redirigir('Mapa Lima')">
+        <div class="brand-card card-marca" onclick="cambiarMapa('C.C. CyberPlaza, Lima')">
           <i class="fas fa-store" style="font-size: 50px; color: #00c6ff; margin-bottom: 15px;"></i>
           <h4>Sede Lima</h4>
           <p style="color: #00c6ff; font-size: 0.9rem; padding: 0 10px;">C.C. CyberPlaza, Tienda 204</p>
         </div>
 
         <!-- Tienda 2 -->
-        <div class="brand-card card-marca" onclick="redirigir('Mapa Trujillo')">
+        <div class="brand-card card-marca" onclick="cambiarMapa('Jr. Orbegoso 560, Trujillo')">
           <i class="fas fa-store" style="font-size: 50px; color: #00c6ff; margin-bottom: 15px;"></i>
           <h4>Sede Trujillo</h4>
           <p style="color: #00c6ff; font-size: 0.9rem; padding: 0 10px;">Jr. Orbegoso 560, Centro Histórico</p>
         </div>
 
         <!-- Tienda 3 -->
-        <div class="brand-card card-marca" onclick="redirigir('Mapa Chiclayo')">
+        <div class="brand-card card-marca" onclick="cambiarMapa('Open Plaza Chiclayo')">
           <i class="fas fa-store" style="font-size: 50px; color: #00c6ff; margin-bottom: 15px;"></i>
           <h4>Sede Chiclayo</h4>
           <p style="color: #00c6ff; font-size: 0.9rem; padding: 0 10px;">Open Plaza Chiclayo, Tienda 18</p>
         </div>
 
         <!-- Tienda 4 -->
-        <div class="brand-card card-marca" onclick="redirigir('Mapa Chepen')">
+        <div class="brand-card card-marca" onclick="cambiarMapa('Trujillo 704, Chepen')">
           <i class="fas fa-store" style="font-size: 50px; color: #00c6ff; margin-bottom: 15px;"></i>
           <h4>Sede Chepén</h4>
           <p style="color: #00c6ff; font-size: 0.9rem; padding: 0 10px;">Trujillo 704</p>
         </div>
 
         <!-- Tienda 5 -->
-        <div class="brand-card card-marca" onclick="redirigir('Mapa Arequipa')">
+        <div class="brand-card card-marca" onclick="cambiarMapa('Rda. Tarapaca 230, Arequipa')">
           <i class="fas fa-store" style="font-size: 50px; color: #00c6ff; margin-bottom: 15px;"></i>
           <h4>Sede Arequipa</h4>
           <p style="color: #00c6ff; font-size: 0.9rem; padding: 0 10px;">Rda. Tarapaca 230</p>
         </div>
 
         <!-- Tienda 6 -->
-        <div class="brand-card card-marca" onclick="redirigir('Mapa Chimbote')">
+        <div class="brand-card card-marca" onclick="cambiarMapa('Jirón Manuel Ruiz 2369, Chimbote')">
           <i class="fas fa-store" style="font-size: 50px; color: #00c6ff; margin-bottom: 15px;"></i>
           <h4>Sede Chimbote</h4>
           <p style="color: #00c6ff; font-size: 0.9rem; padding: 0 10px;">Jirón Manuel Ruiz 2369</p>
         </div>
 
         <!-- Tienda 7 -->
-        <div class="brand-card card-marca" onclick="redirigir('Mapa Cajamarca')">
+        <div class="brand-card card-marca" onclick="cambiarMapa('Jr. Guillermo Urrelo 912, Cajamarca')">
           <i class="fas fa-store" style="font-size: 50px; color: #00c6ff; margin-bottom: 15px;"></i>
           <h4>Sede Cajamarca</h4>
           <p style="color: #00c6ff; font-size: 0.9rem; padding: 0 10px;">Jr. Guillermo Urrelo 912</p>
         </div>
 
         <!-- Tienda 8 -->
-        <div class="brand-card card-marca" onclick="redirigir('Mapa Pacanga')">
+        <div class="brand-card card-marca" onclick="cambiarMapa('Avenida el Progreso Mz Q Lote 03, Pacanga')">
           <i class="fas fa-store" style="font-size: 50px; color: #00c6ff; margin-bottom: 15px;"></i>
           <h4>Sede Kawachi</h4>
           <p style="color: #00c6ff; font-size: 0.9rem; padding: 0 10px;">Avenida el Progreso Mz Q Lote 03</p>
         </div>
+      </div>
+
+      <div class="location-map" style="margin-top: 50px;">
+        <h3 style="color: white; text-align: center; margin-bottom: 30px; font-size: 1.8rem;">Ubicación en el Mapa</h3>
+        <iframe id="mapa-iframe"
+          src="https://maps.google.com/maps?q=C.C.%20CyberPlaza%2C%20Lima&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          width="100%" height="450" style="border: 0; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </section>
   </main>
