@@ -10,62 +10,8 @@
 </head>
 
 <body>
-  <header>
-    <div class="header-container">
-      <div class="logo">
-        <img src="img/logo.png" alt="Netcraft Logo" class="logo-img" style="width: 50px; height: auto" />
-      </div>
 
-      <div class="search-bar">
-        <input type="text" placeholder="Buscar componentes, periféricos..." />
-        <button class="search-btn">Buscar</button>
-      </div>
-
-      <nav class="nav-right">
-        <ul class="nav-links">
-          <li><a href="index.html">INICIO</a></li>
-          <li><a href="productos.html">PRODUCTOS</a></li>
-
-          <li class="dropdown">
-            <a class="dropbtn" href="marcas.html">MARCAS <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-content">
-              <li><a href="productos.html?marca=asus"><i class="fas fa-angle-right"></i> Asus</a></li>
-              <li><a href="productos.html?marca=lenovo"><i class="fas fa-angle-right"></i> Lenovo</a></li>
-              <li><a href="productos.html?marca=hp"><i class="fas fa-angle-right"></i> HP</a></li>
-              <li><a href="productos.html?marca=acer"><i class="fas fa-angle-right"></i> Acer</a></li>
-              <li><a href="productos.html?marca=msi"><i class="fas fa-angle-right"></i> MSI</a></li>
-              <li><a href="productos.html?marca=gigabyte"><i class="fas fa-angle-right"></i> Gigabyte</a></li>
-              <li><a href="productos.html?marca=kingston"><i class="fas fa-angle-right"></i> Kingston</a></li>
-              <li><a href="productos.html?marca=logitech"><i class="fas fa-angle-right"></i> Logitech</a></li>
-            </ul>
-          </li>
-
-          <li class="dropdown">
-            <a href="#" class="dropbtn">CATEGORÍAS <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-content">
-              <li><a href="productos.html?categoria=procesadores"><i class="fas fa-microchip"></i> Procesadores</a></li>
-              <li><a href="productos.html?categoria=tarjetas-de-video"><i class="fas fa-memory"></i> Tarjetas de
-                  Video</a></li>
-              <li><a href="productos.html?categoria=laptops"><i class="fas fa-laptop"></i> Laptops</a></li>
-              <li><a href="productos.html?categoria=perifericos"><i class="fas fa-keyboard"></i> Periféricos</a></li>
-              <li><a href="productos.html?categoria=almacenamiento"><i class="fas fa-hdd"></i> Almacenamiento</a></li>
-              <li><a href="productos.html?categoria=monitores"><i class="fas fa-desktop"></i> Monitores</a></li>
-            </ul>
-          </li>
-
-          <li><a href="quienes-somos.html">QUIÉNES SOMOS</a></li>
-          <li><a href="tiendas.html">NUESTRAS TIENDAS</a></li>
-        </ul>
-
-        <div class="cart-icon" onclick="toggleCart()">
-          <i class="fas fa-shopping-cart"></i>
-          <span id="cart-count">0</span>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-
+  <div id="header-placeholder"></div>
 
   <main>
     <section class="brands-section">
@@ -73,56 +19,48 @@
 
       <div class="brand-grid">
 
-        <!-- Tienda 1 -->
         <div class="brand-card card-marca" onclick="cambiarMapa('C.C. CyberPlaza, Lima')">
           <i class="fas fa-store" style="font-size: 50px; color: #00c6ff; margin-bottom: 15px;"></i>
           <h4>Sede Lima</h4>
           <p style="color: #00c6ff; font-size: 0.9rem; padding: 0 10px;">C.C. CyberPlaza, Tienda 204</p>
         </div>
 
-        <!-- Tienda 2 -->
         <div class="brand-card card-marca" onclick="cambiarMapa('Jr. Orbegoso 560, Trujillo')">
           <i class="fas fa-store" style="font-size: 50px; color: #00c6ff; margin-bottom: 15px;"></i>
           <h4>Sede Trujillo</h4>
           <p style="color: #00c6ff; font-size: 0.9rem; padding: 0 10px;">Jr. Orbegoso 560, Centro Histórico</p>
         </div>
 
-        <!-- Tienda 3 -->
         <div class="brand-card card-marca" onclick="cambiarMapa('Open Plaza Chiclayo')">
           <i class="fas fa-store" style="font-size: 50px; color: #00c6ff; margin-bottom: 15px;"></i>
           <h4>Sede Chiclayo</h4>
           <p style="color: #00c6ff; font-size: 0.9rem; padding: 0 10px;">Open Plaza Chiclayo, Tienda 18</p>
         </div>
 
-        <!-- Tienda 4 -->
         <div class="brand-card card-marca" onclick="cambiarMapa('Trujillo 704, Chepen')">
           <i class="fas fa-store" style="font-size: 50px; color: #00c6ff; margin-bottom: 15px;"></i>
           <h4>Sede Chepén</h4>
           <p style="color: #00c6ff; font-size: 0.9rem; padding: 0 10px;">Trujillo 704</p>
         </div>
 
-        <!-- Tienda 5 -->
         <div class="brand-card card-marca" onclick="cambiarMapa('Rda. Tarapaca 230, Arequipa')">
           <i class="fas fa-store" style="font-size: 50px; color: #00c6ff; margin-bottom: 15px;"></i>
           <h4>Sede Arequipa</h4>
           <p style="color: #00c6ff; font-size: 0.9rem; padding: 0 10px;">Rda. Tarapaca 230</p>
         </div>
 
-        <!-- Tienda 6 -->
         <div class="brand-card card-marca" onclick="cambiarMapa('Jirón Manuel Ruiz 2369, Chimbote')">
           <i class="fas fa-store" style="font-size: 50px; color: #00c6ff; margin-bottom: 15px;"></i>
           <h4>Sede Chimbote</h4>
           <p style="color: #00c6ff; font-size: 0.9rem; padding: 0 10px;">Jirón Manuel Ruiz 2369</p>
         </div>
 
-        <!-- Tienda 7 -->
         <div class="brand-card card-marca" onclick="cambiarMapa('Jr. Guillermo Urrelo 912, Cajamarca')">
           <i class="fas fa-store" style="font-size: 50px; color: #00c6ff; margin-bottom: 15px;"></i>
           <h4>Sede Cajamarca</h4>
           <p style="color: #00c6ff; font-size: 0.9rem; padding: 0 10px;">Jr. Guillermo Urrelo 912</p>
         </div>
 
-        <!-- Tienda 8 -->
         <div class="brand-card card-marca" onclick="cambiarMapa('Avenida el Progreso Mz Q Lote 03, Pacanga')">
           <i class="fas fa-store" style="font-size: 50px; color: #00c6ff; margin-bottom: 15px;"></i>
           <h4>Sede Kawachi</h4>
@@ -139,31 +77,13 @@
       </div>
     </section>
   </main>
-  <footer>
-    <div class="footer-container">
-      <div class="f-logo-area">
-        <img src="img/logo.png" alt="Logo Footer" width="100" />
-      </div>
-      <div class="f-links">
-        <ul>
-          <li><a href="#" onclick="redirigir('Blog')">Blog</a></li>
-          <li>
-            <a href="#" onclick="redirigir('¿Cómo comprar?')">¿Cómo comprar?</a>
-          </li>
-          <li>
-            <a href="#" onclick="redirigir('Preguntas frecuentes')">Preguntas frecuentes</a>
-          </li>
-          <li>
-            <a href="#" onclick="redirigir('Términos y condiciones')">Términos y condiciones</a>
-          </li>
-        </ul>
-      </div>
-      <div class="f-reclamaciones">
-        <img src="img/libro-de-reclamaciones.jpg" alt="Libro de Reclamaciones" class="lib-img" />
-      </div>
-    </div>
-    <p class="copy">© 2026 Grupo 2 - Proyecto Académico ISAT</p>
-  </footer>
+
+  <div id="footer-placeholder"></div>
+  <div id="chatbot-placeholder"></div>
+
+  <script src="header.js"></script>
+  <script src="footer.js"></script>
+  <script src="chatbot.js"></script>
   <script src="script.js"></script>
 </body>
 

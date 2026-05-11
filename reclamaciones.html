@@ -230,15 +230,54 @@
     </main>
 
     <script>
+        const API_URL = '/api';
+        
         // Mostrar fecha automática
         const hoy = new Date();
         document.getElementById('fecha-actual').innerText = "Fecha: " + hoy.toLocaleDateString();
 
-        function enviarFormulario(event) {
+        async function enviarFormulario(event) {
             event.preventDefault();
-            const nroReclamo = Math.floor(Math.random() * 9000) + 1000;
-            alert("✅ ¡Reclamación Registrada!\n\nTu número de seguimiento es: NET-2024-" + nroReclamo + "\nTe enviaremos una respuesta en un plazo máximo de 15 días hábiles.");
-            window.location.href = "index.html";
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            
+            const reclamacion = {
+                nombre: formData.get('nombre'),
+                dni: formData.get('dni'),
+                correo: formData.get('correo'),
+                telefono: formData.get('telefono'),
+                tipo_bien: formData.querySelector('select').value,
+                monto_producto: formData.get('monto') || '0',
+                tipo_incidencia: document.getElementById('tipo_incidencia').value,
+                descripcion: formData.querySelector('textarea:nth-of-type(1)').value,
+                pedido: formData.querySelector('textarea:nth-of-type(2)').value
+            };
+
+            try {
+                // Intentar enviar a la API
+                const response = await fetch(`${API_URL}/reclamaciones`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(reclamacion)
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert("✅ ¡Reclamación Registrada!\n\nTu número de seguimiento es: " + data.codigo + "\nTe enviaremos una respuesta en un plazo máximo de 15 días hábiles.");
+                    window.location.href = "index.html";
+                } else {
+                    throw new Error('Error del servidor');
+                }
+            } catch (error) {
+                // Fallback: guardar localmente y mostrar código simulado
+                console.log('API no disponible, guardando localmente');
+                const nroReclamo = Math.floor(Math.random() * 9000) + 1000;
+                localStorage.setItem('reclamacion_' + nroReclamo, JSON.stringify(reclamacion));
+                alert("✅ ¡Reclamación Registrada!\n\nTu número de seguimiento es: NET-2026-" + nroReclamo + "\n(Modo offline - se guardará localmente)\nTe enviaremos una respuesta en un plazo máximo de 15 días hábiles.");
+                window.location.href = "index.html";
+            }
         }
     </script>
 </body>

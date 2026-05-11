@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "nombre": "Tarjeta RTX 4070",
+    "precio": 2500,
+    "imagen": "img/p1.png",
+    "marca": "asus",
+    "categoria": "tarjetas-de-video",
+    "top": true
+  },
+  {
+    "id": 2,
+    "nombre": "Teclado Mecánico RGB",
+    "precio": 350,
+    "imagen": "img/p2.png",
+    "marca": "logitech",
+    "categoria": "perifericos",
+    "top": true
+  },
+  {
+    "id": 3,
+    "nombre": "Procesador Intel i7",
+    "precio": 1800,
+    "imagen": "img/p3.jpg",
+    "marca": "gigabyte",
+    "categoria": "procesadores",
+    "top": true
+  },
+  {
+    "id": 4,
+    "nombre": "Monitor 144Hz",
+    "precio": 950,
+    "imagen": "img/p4.jpg",
+    "marca": "acer",
+    "categoria": "monitores",
+    "top": true
+  },
+  {
+    "id": 5,
+    "nombre": "Pc gamer",
+    "precio": 2300,
+    "imagen": "img/p5.jpg",
+    "marca": "msi",
+    "categoria": "laptops",
+    "top": true
+  },
+  {
+    "id": 6,
+    "nombre": "Procesador Amd Ryzen 3 3200g",
+    "precio": 266.15,
+    "imagen": "img/p6.jpg",
+    "marca": "hp",
+    "categoria": "procesadores",
+    "top": true
+  },
+  {
+    "id": 7,
+    "nombre": "Placa Madre Gigabyte X870 Eagle Wifi 7",
+    "precio": 1800,
+    "imagen": "img/p7.jpg",
+    "marca": "gigabyte",
+    "categoria": "procesadores",
+    "top": true
+  },
+  {
+    "id": 8,
+    "nombre": "Lenovo IdeaPad 3 15IAH7, Core i5-12450H",
+    "precio": 950,
+    "imagen": "img/p8.jpg",
+    "marca": "lenovo",
+    "categoria": "laptops",
+    "top": true
+  },
+  {
+    "id": 9,
+    "nombre": "Laptop Gamer ASUS ROG Strix G15",
+    "precio": 4500,
+    "imagen": "img/p1.png",
+    "marca": "asus",
+    "categoria": "laptops",
+    "top": false
+  },
+  {
+    "id": 10,
+    "nombre": "Memoria RAM 8GB DDR4",
+    "precio": 150,
+    "imagen": "img/p8.jpg",
+    "marca": "kingston",
+    "categoria": "almacenamiento",
+    "top": false
+  }
+]
