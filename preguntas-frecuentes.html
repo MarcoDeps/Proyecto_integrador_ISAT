@@ -8,9 +8,55 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .faq-container { max-width: 800px; margin: 50px auto; padding: 20px; }
-        .faq-item { background: var(--card-bg); margin-bottom: 15px; border-radius: 8px; border: 1px solid var(--border-color); overflow: hidden; }
-        .faq-question { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: bold; color: var(--primary-cyan); }
-        .faq-answer { padding: 0 20px 20px; color: #ccc; line-height: 1.6; }
+        
+        .faq-item { 
+            background: var(--card-bg); 
+            margin-bottom: 15px; 
+            border-radius: 8px; 
+            border: 1px solid var(--border-color); 
+            overflow: hidden; 
+            transition: 0.3s;
+        }
+
+        .faq-question { 
+            padding: 20px; 
+            cursor: pointer; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            font-weight: bold; 
+            color: var(--primary-cyan); 
+            user-select: none;
+        }
+
+        /* La respuesta ahora está oculta por defecto */
+        .faq-answer { 
+            max-height: 0; 
+            overflow: hidden; 
+            padding: 0 20px; 
+            color: #ccc; 
+            line-height: 1.6; 
+            transition: all 0.3s ease-out; /* Animación suave al abrir */
+            opacity: 0;
+        }
+
+        /* Clase que aplicaremos con JavaScript para abrir la pregunta */
+        .faq-item.active {
+            border-color: var(--primary-cyan);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Un valor lo suficientemente grande */
+            padding: 0 20px 20px;
+            opacity: 1;
+        }
+
+        /* Rotación de la flecha cuando está activo */
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
+            transition: 0.3s;
+        }
+
         h1 { text-align: center; color: white; margin-bottom: 40px; }
     </style>
 </head>
@@ -30,12 +76,30 @@
 
         <div class="faq-item">
             <div class="faq-question">¿Qué métodos de pago aceptan? <i class="fas fa-chevron-down"></i></div>
-            <div class="faq-answer">Aceptamos todas las tarjetas de crédito/débito, transferencias bancarias (BCP, BBVA, Scotiabank) y pagos vía Yape o Plin.</div>
+            <div class="faq-answer">Aceptamos todas las tarjetas de crédito/debito, transferencias bancarias (BCP, BBVA, Scotiabank) y pagos vía Yape o Plin.</div>
         </div>
 
         <div style="text-align: center; margin-top: 30px;">
             <a href="index.html" style="color: var(--primary-cyan); text-decoration: none;">&larr; Volver a la tienda</a>
         </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                
+                // Toggle: si está abierto lo cierra, si está cerrado lo abre
+                item.classList.toggle('active');
+                
+                // Opcional: Cerrar los otros cuando abres uno (estilo acordeón real)
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
