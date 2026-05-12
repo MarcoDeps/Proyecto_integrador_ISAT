@@ -82,11 +82,56 @@
   },
   {
     "id": 10,
-    "nombre": "Memoria RAM 8GB DDR4",
+    "nombre": "Memoria Ddr4 De 32gb Kingston Fury Beast 3200mhz Para Pc",
     "precio": 150,
-    "imagen": "img/p8.jpg",
+    "imagen": "img/p10.jpg",
     "marca": "kingston",
     "categoria": "almacenamiento",
     "top": false
-  }
+  },
+  {
+    "id": 11,
+    "nombre": "Monitor Samsung 24 Pulgadas",
+    "precio": 537.85,
+    "imagen": "img/p11.jpg",
+    "marca": "Samsung",
+    "categoria": "monitores",
+    "top": false
+  },
+  {
+    "id": 12,
+    "nombre": "Monitor Portatil Msi Pro 16 Pulgadas",
+    "precio": 416.4,
+    "imagen": "img/p12.jpg",
+    "marca": "msi",
+    "categoria": "monitores",
+    "top": false
+  },
+  {
+    "id": 13,
+    "nombre": "Pc Gaming Plus Amd Ryzen 7 5700X, 16GB DDR4",
+    "precio": 3583.18,
+    "imagen": "img/p13.jpg",
+    "marca": "hp",
+    "categoria": "procesadores",
+    "top": false
+  },
+  {
+    "id": 14,
+    "nombre": "Mainboard Asus Rog Strix Z890 - A Gaming Wifi, Ddr5",
+    "precio": 1462.48,
+    "imagen": "img/p14.jpg",
+    "marca": "asus",
+    "categoria": "tarjetas-de-video",
+    "top": false
+  },
+  {
+    "id": 15,
+    "nombre": "Mouse Gaming Logitech G309",
+    "precio": 277.15,
+    "imagen": "img/p15.jpg",
+    "marca": "logitech",
+    "categoria": "perifericos",
+    "top": false
+  } 
 ]
