@@ -1,4 +1,4 @@
-[
+  [
   {
     "id": 1,
     "nombre": "Tarjeta RTX 4070",
@@ -37,7 +37,7 @@
   },
   {
     "id": 5,
-    "nombre": "Pc gamer",
+    "nombre": "Laptop Core I7-14650hx Msi Katana 15 Hx B14wek",
     "precio": 2300,
     "imagen": "img/p5.jpg",
     "marca": "msi",
@@ -55,11 +55,11 @@
   },
   {
     "id": 7,
-    "nombre": "Placa Madre Gigabyte X870 Eagle Wifi 7",
+    "nombre": "Memoria Para Laptop Sodimm Kingston Ddr4 8gb",
     "precio": 1800,
     "imagen": "img/p7.jpg",
-    "marca": "gigabyte",
-    "categoria": "procesadores",
+    "marca": "Kingston",
+    "categoria": "almacenamiento",
     "top": true
   },
   {
@@ -75,7 +75,7 @@
     "id": 9,
     "nombre": "Laptop Gamer ASUS ROG Strix G15",
     "precio": 4500,
-    "imagen": "img/p1.png",
+    "imagen": "img/p9.jpg",
     "marca": "asus",
     "categoria": "laptops",
     "top": false
@@ -109,7 +109,7 @@
   },
   {
     "id": 13,
-    "nombre": "Pc Gaming Plus Amd Ryzen 7 5700X, 16GB DDR4",
+    "nombre": "Procesador Intel Core I7 14700f 2.1ghz Hasta 5.4ghz 33mb",
     "precio": 3583.18,
     "imagen": "img/p13.jpg",
     "marca": "hp",
@@ -118,7 +118,7 @@
   },
   {
     "id": 14,
-    "nombre": "Mainboard Asus Rog Strix Z890 - A Gaming Wifi, Ddr5",
+    "nombre": "Tarjeta De Video Gigabyte Geforce Rtx 5050 8gb",
     "precio": 1462.48,
     "imagen": "img/p14.jpg",
     "marca": "asus",
@@ -133,5 +133,59 @@
     "marca": "logitech",
     "categoria": "perifericos",
     "top": false
-  } 
+  }, 
+  {
+    "id": 16,
+    "nombre": "Laptop Gamer Asus Rog G513ic-Hn046t, Ryzen 7-4800h,15.6",
+    "precio": 4500,
+    "imagen": "img/p16.jpg",
+    "marca": "asus",
+    "categoria": "laptops",
+    "top": false
+  },
+  {
+    "id": 17,
+    "nombre": "Asus Rog Strix G17 17.3 240hz Qhd Gaming Laptop",
+    "precio": 5300,
+    "imagen": "img/p17.jpg",
+    "marca": "asus",
+    "categoria": "laptops",
+    "top": false
+  },
+  {
+    "id": 18,
+    "nombre": "Unidad De Almacenamiento Ssd M.2 Pcie Kingston 500gb Nvme Nv3",
+    "precio": 150,
+    "imagen": "img/p18.jpg",
+    "marca": "kingston",
+    "categoria": "almacenamiento",
+    "top": false
+  },
+  {
+    "id": 19,
+    "nombre": "Tarjeta De Video Msi Geforce Rtx 5050 8gb Ventus 2x Oc Gddr6",
+    "precio": 150,
+    "imagen": "img/p19.jpg",
+    "marca": "msi",
+    "categoria": "tarjetas-de-video",
+    "top": false
+  },
+  {
+    "id": 20,
+    "nombre": "Teclado Mecánico RGB",
+    "precio": 330,
+    "imagen": "img/p20.jpg",
+    "marca": "logitech",
+    "categoria": "perifericos",
+    "top": true
+  },
+  {
+    "id": 21,
+    "nombre": "Laptop Asus TUF Gaming FA608PM-RV078, Amd Rysen 9-8940HX, 16GB",
+    "precio": 4500,
+    "imagen": "img/p21.jpg",
+    "marca": "asus",
+    "categoria": "laptops",
+    "top": false
+  }
 ]
