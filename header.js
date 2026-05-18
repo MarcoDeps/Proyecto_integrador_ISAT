@@ -11,16 +11,14 @@
           <input type="text" id="search-input" placeholder="Buscar componentes, periféricos..." onkeydown="if(event.key==='Enter')buscarProductos()">
           <button class="search-btn" onclick="buscarProductos()">Buscar</button>
         </div>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-          <i class="fas fa-bars"></i>
-        </button>
+        
         <nav class="nav-right">
           <div class="nav-overlay" onclick="toggleMobileMenu()"></div>
           <ul class="nav-links">
             <li><a href="index.html">INICIO</a></li>
             <li><a href="productos.html">PRODUCTOS</a></li>
             <li class="dropdown">
-              <a class="dropbtn" href="marcas.html">MARCAS <i class="fas fa-chevron-down"></i></a>
+              <a class="dropbtn" href="#" onclick="toggleDropdown(this); return false;">MARCAS <i class="fas fa-chevron-down"></i></a>
               <ul class="dropdown-content">
                 <li><a href="productos.html?marca=asus"><i class="fas fa-angle-right"></i> Asus</a></li>
                 <li><a href="productos.html?marca=lenovo"><i class="fas fa-angle-right"></i> Lenovo</a></li>
@@ -33,7 +31,7 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropbtn">CATEGORÍAS <i class="fas fa-chevron-down"></i></a>
+              <a href="#" class="dropbtn" onclick="toggleDropdown(this); return false;">CATEGORÍAS <i class="fas fa-chevron-down"></i></a>
               <ul class="dropdown-content">
                 <li><a href="productos.html?categoria=procesadores"><i class="fas fa-microchip"></i> Procesadores</a></li>
                 <li><a href="productos.html?categoria=tarjetas-de-video"><i class="fas fa-memory"></i> Tarjetas de Video</a></li>
@@ -50,6 +48,9 @@
             <i class="fas fa-shopping-cart"></i>
             <span id="cart-count">0</span>
           </div>
+          <button class="mobile-menu-btn" id="hamburgerBtn" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+          </button>
         </nav>
       </div>
     </header>
@@ -63,7 +64,7 @@
       </div>
       <div class="sidebar-footer">
         <p>Total: S/. <span id="cart-total">0.00</span></p>
-        <button class="btn-checkout">PAGAR</button>
+        <button class="btn-checkout" onclick="abrirPasarelaPago()">PAGAR</button>
       </div>
     </div>
     <div id="overlay" onclick="toggleCart()"></div>

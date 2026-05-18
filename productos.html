@@ -15,7 +15,10 @@
 
   <main>
     <div class="layout-container">
-      <aside class="sidebar-filters">
+      <button class="filter-toggle-btn" onclick="toggleFilters()">
+        <i class="fas fa-chevron-down"></i> Mostrar Filtros
+      </button>
+      <aside class="sidebar-filters" id="filters-panel">
         <div class="filter-header">
           <div class="filter-header-title">
             <i class="fas fa-sliders-h"></i>

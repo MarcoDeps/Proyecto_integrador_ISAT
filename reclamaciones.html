@@ -170,21 +170,21 @@
                 <div class="grid-inputs">
                     <div class="input-group">
                         <label>Nombre y Apellidos</label>
-                        <input type="text" required placeholder="Juan Perez">
+                        <input type="text" name="nombre" required placeholder="Juan Perez">
                     </div>
                     <div class="input-group">
                         <label>DNI / CE</label>
-                        <input type="text" required placeholder="8 dígitos">
+                        <input type="text" name="dni" required placeholder="8 dígitos">
                     </div>
                 </div>
                 <div class="grid-inputs">
                     <div class="input-group">
                         <label>Correo Electrónico</label>
-                        <input type="email" required placeholder="tu@correo.com">
+                        <input type="email" name="correo" required placeholder="tu@correo.com">
                     </div>
                     <div class="input-group">
                         <label>Teléfono / WhatsApp</label>
-                        <input type="tel" required placeholder="999 999 999">
+                        <input type="tel" name="telefono" required placeholder="999 999 999">
                     </div>
                 </div>
             </div>
@@ -194,14 +194,14 @@
                 <div class="grid-inputs">
                     <div class="input-group">
                         <label>Tipo de Bien</label>
-                        <select>
-                            <option>Producto (Hardware, periféricos, etc.)</option>
-                            <option>Servicio (Mantenimiento, armado, etc.)</option>
+                        <select name="tipo_bien">
+                            <option value="Producto">Producto (Hardware, periféricos, etc.)</option>
+                            <option value="Servicio">Servicio (Mantenimiento, armado, etc.)</option>
                         </select>
                     </div>
                     <div class="input-group">
                         <label>Monto del Producto (S/)</label>
-                        <input type="number" step="0.01" placeholder="0.00">
+                        <input type="number" name="monto" step="0.01" placeholder="0.00">
                     </div>
                 </div>
             </div>
@@ -210,18 +210,18 @@
                 <h3><i class="fas fa-exclamation-circle"></i> 3. Detalle de la Reclamación</h3>
                 <div class="input-group">
                     <label>Tipo (Queja o Reclamo)</label>
-                    <select id="tipo_incidencia">
+                    <select id="tipo_incidencia" name="tipo_incidencia">
                         <option value="Reclamo">Reclamo (Disconformidad con el producto)</option>
                         <option value="Queja">Queja (Disconformidad con la atención)</option>
                     </select>
                 </div>
                 <div class="input-group">
                     <label>Descripción detallada</label>
-                    <textarea rows="4" required></textarea>
+                    <textarea name="descripcion" rows="4" required></textarea>
                 </div>
                 <div class="input-group">
                     <label>Pedido del Consumidor (¿Qué solución buscas?)</label>
-                    <textarea rows="3" required></textarea>
+                    <textarea name="pedido" rows="3" required></textarea>
                 </div>
             </div>
 
@@ -247,11 +247,11 @@
                 dni: formData.get('dni'),
                 correo: formData.get('correo'),
                 telefono: formData.get('telefono'),
-                tipo_bien: formData.querySelector('select').value,
+                tipo_bien: formData.get('tipo_bien'),
                 monto_producto: formData.get('monto') || '0',
-                tipo_incidencia: document.getElementById('tipo_incidencia').value,
-                descripcion: formData.querySelector('textarea:nth-of-type(1)').value,
-                pedido: formData.querySelector('textarea:nth-of-type(2)').value
+                tipo_incidencia: formData.get('tipo_incidencia'),
+                descripcion: formData.get('descripcion'),
+                pedido: formData.get('pedido')
             };
 
             try {

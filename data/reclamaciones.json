@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "nombre": "Jose Perez",
+    "dni": "76543210",
+    "correo": "jose@gmail.com",
+    "telefono": "912345678",
+    "tipo_bien": "Producto",
+    "monto_producto": "150",
+    "tipo_incidencia": "Reclamo",
+    "descripcion": "Teclado roto al llegar",
+    "pedido": "Cambio de teclado",
+    "id": 1,
+    "codigo": "NET-2026-0001",
+    "fecha": "2026-05-18T01:32:33.268Z",
+    "estado": "pendiente"
+  }
+]
