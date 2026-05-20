@@ -172,7 +172,7 @@
   },
   {
     "id": 20,
-    "nombre": "Teclado Mecánico RGB",
+    "nombre": "Mouse Logitech G203 Lightsync",
     "precio": 330,
     "imagen": "img/p20.jpg",
     "marca": "logitech",
@@ -187,5 +187,32 @@
     "marca": "asus",
     "categoria": "laptops",
     "top": false
+  },
+  {
+    "id": 22,
+    "nombre": "Teclado Gamer F2067 (Aul-F2067-Gry-Rbw) Mecanico   ",
+    "precio": 140,
+    "imagen": "img/p22.jpg",
+    "marca": "logitech",
+    "categoria": "perifericos",
+    "top": true
+  },
+  {
+    "id": 23,
+    "nombre": "Teclado Gamer Inalambrico Logitech G Pro X 60 ",
+    "precio": 683.59,
+    "imagen": "img/p23.jpg",
+    "marca": "logitech",
+    "categoria": "perifericos",
+    "top": true
+  },
+  {
+    "id": 24,
+    "nombre": "Mouse Inalambrico Logitech G305 Ligthspeed Gaming",
+    "precio": 144.01,
+    "imagen": "img/p24.jpg",
+    "marca": "logitech",
+    "categoria": "perifericos",
+    "top": true
   }
 ]
